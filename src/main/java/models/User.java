@@ -11,7 +11,7 @@ public class User {
 
     public User withEmail(String email) {//fluent style במקום setEmail
         this.email = email;
-        return new User();//return this;
+        return this;//return this;
     }
 
     public String getPassword() {
