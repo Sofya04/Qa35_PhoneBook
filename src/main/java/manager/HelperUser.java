@@ -77,4 +77,8 @@ public class HelperUser extends HelperBase{
         //alert.sendKeys("Hello");
         return errorText.contains("Wrong email or password format");
     }
+
+    public void submitRegistration() {
+        click(By.xpath("//*[text()=' Registration']"));
+    }
 }
