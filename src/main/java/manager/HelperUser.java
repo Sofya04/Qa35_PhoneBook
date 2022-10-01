@@ -77,8 +77,19 @@ public class HelperUser extends HelperBase{
         //alert.sendKeys("Hello");
         return errorText.contains("Wrong email or password format");
     }
+//    public boolean isNoContactsHereDisplayed(){
+//        return new WebDriverWait(wd, Duration.ofSeconds(5)).until(ExpectedConditions.textToBePresentInElement(By.cssSelector("[div.contact-page_message__2qafk>h1]"), "No Contacts here!"));
+//    }
 
     public void submitRegistration() {
         click(By.xpath("//*[text()=' Registration']"));
     }
+
+    public void login(User user) {
+        openLoginRegistrationForm();
+        fillLoginRegistrationForm(user);
+        submitLogin();
+    }
+
+
 }

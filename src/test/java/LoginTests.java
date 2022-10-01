@@ -51,5 +51,14 @@ public class LoginTests extends TestBase{
     @Test
     public void loginNegativeWrongPasswordFormat(){
 
+        User user = new User().withEmail("sonka04gmail.com").withPassword("kotic74387$");
+        app.getHelperUser().openLoginRegistrationForm();
+        app.getHelperUser().fillLoginRegistrationForm(user);
+        app.getHelperUser().submitLogin();
+
+        Assert.assertFalse(app.getHelperUser().isLogged());
+        Assert.assertTrue(app.getHelperUser().isAlertPresent());
+        Assert.assertTrue(app.getHelperUser().isErrorWrongFormat());
+
     }
 }
