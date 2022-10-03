@@ -30,7 +30,7 @@ public class AddNewContactTests extends TestBase {
         app.helperContact().fillAllFields(contact);
         app.helperContact().saveNewContact();
 
-       // Assert.assertTrue(app.helperContact().isContactAdded());
+       //Assert.assertTrue(app.helperContact().isContactAdded(contact.getPhone()));
 
 
     }
@@ -47,6 +47,7 @@ public class AddNewContactTests extends TestBase {
         app.helperContact().openAddNewContactForm();
         app.helperContact().fillRequiredFields(contact);
         app.helperContact().saveNewContact();
+        //Assert.assertTrue(app.helperContact().isContactAdded(contact.getPhone()));
 
     }
 }
