@@ -1,4 +1,5 @@
 package manager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
@@ -29,6 +30,9 @@ public class ApplicationManager {
     }
     public HelperContact helperContact(){
         return helperContact;
+    }
+    public boolean isElementPresent(By locator){
+        return wd.findElements(locator).size()>0;
     }
 
 }

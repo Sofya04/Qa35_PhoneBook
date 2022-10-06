@@ -1,0 +1,3 @@
+12:43:33.178 [Test worker] INFO  TestBase - Test starts with name ---> loginSuccess
+12:43:34.044 [Test worker] INFO  TestBase - email sonka04@gmail.com && password Sonka04$
+12:43:36.069 [Test worker] INFO  TestBase - Assert passed

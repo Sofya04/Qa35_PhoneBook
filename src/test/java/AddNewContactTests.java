@@ -1,13 +1,14 @@
 import models.Contact;
 import models.User;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.Random;
 
 
 public class AddNewContactTests extends TestBase {
+
 
     @BeforeMethod
     public void precondition() {
@@ -19,10 +20,13 @@ public class AddNewContactTests extends TestBase {
     @Test
     public void addNewContactSuccessWithAllFields(){
 
+        Random random = new Random();
+        int i = random.nextInt(1000)+1000;
+
         Contact contact = Contact.builder().name("Volodymyr")
                 .lastName("Zelenskyy")
-                .phone("38493729109")
-                .email("vladimir78@mail.com")
+                .phone("3849"+i)
+                .email("vladimir"+i+"@mail.com")
                 .address("Kryvyi Rih")
                 .description("My dear friend")
                 .build();
@@ -30,24 +34,57 @@ public class AddNewContactTests extends TestBase {
         app.helperContact().fillAllFields(contact);
         app.helperContact().saveNewContact();
 
-       //Assert.assertTrue(app.helperContact().isContactAdded(contact.getPhone()));
-
+        Assert.assertTrue(app.helperContact().isContactAddedByName(contact.getName()));
+        Assert.assertTrue(app.helperContact().isContactAddedByPhone(contact.getPhone()));
 
     }
 
     @Test
     public void addNewContactSuccessWithRequiredFields(){
-        Contact contact = Contact.builder()
+        Random random = new Random();
+        int i = random.nextInt(1000)+1000;
+
+        Contact contact1 = Contact.builder()
                 .name("Alex")
                 .lastName("Kuper")
-                .phone("0529457983")
-                .email("alex85@gmail.com")
+                .phone("05294" + i)
+                .email("alex"+i+"@gmail.com")
+                .address("Tel-Aviv")
+                .build();
+
+        Contact contact2 = Contact.builder()
+                .name("Sonya")
+                .lastName("Gurevich")
+                .phone("048374" + i)
+                .email("sonka04"+i+"@gmail.com")
+                .address("Rehovot")
+                .build();
+        app.helperContact().openAddNewContactForm();
+        app.helperContact().fillRequiredFields(contact1);
+        app.helperContact().saveNewContact();
+        Assert.assertTrue(app.helperContact().isContactAddedByName(contact1.getName()));
+        Assert.assertTrue(app.helperContact().isContactAddedByPhone(contact1.getPhone()));
+
+        app.helperContact().openAddNewContactForm();
+        app.helperContact().fillRequiredFields(contact2);
+        app.helperContact().saveNewContact();
+        Assert.assertTrue(app.helperContact().isContactAddedByName(contact2.getName()));
+        Assert.assertTrue(app.helperContact().isContactAddedByPhone(contact2.getPhone()));
+    }
+
+    @Test
+    public void addNewContactWrongName(){
+        Contact contact1 = Contact.builder()
+                .name("")
+                .lastName("Kuper")
+                .phone("052944898")
+                .email("alex@gmail.com")
                 .address("Tel-Aviv")
                 .build();
         app.helperContact().openAddNewContactForm();
-        app.helperContact().fillRequiredFields(contact);
+        app.helperContact().fillRequiredFields(contact1);
         app.helperContact().saveNewContact();
-        //Assert.assertTrue(app.helperContact().isContactAdded(contact.getPhone()));
+        Assert.assertTrue(app.helperContact().isPageStillDisplayed());
 
     }
 }
