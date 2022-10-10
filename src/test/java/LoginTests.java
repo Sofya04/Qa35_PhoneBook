@@ -8,22 +8,23 @@ public class LoginTests extends TestBase{
 
     @BeforeMethod
     public void precondition(){
+        logger.info("Start authorization check");
         if(app.getHelperUser().isLogged()){
             app.getHelperUser().logOut();
+            logger.info("Test was needed in logout");
         }
     }
 
     @Test
     public void loginSuccess() {
 
-        logger.info("Test starts with name ---> loginSuccess");
+        logger.info("email sonka04@gmail.com && password Sonka04$");
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm("sonka04@gmail.com", "Sonka04$");
         app.getHelperUser().submitLogin();
-        logger.info("email sonka04@gmail.com && password Sonka04$");
         app.getHelperUser().pause(2000);
         Assert.assertTrue(app.getHelperUser().isLogged());
-        logger.info("Assert passed");
+        logger.info("Assert checked the presence of Sign out button");
 
     }
 

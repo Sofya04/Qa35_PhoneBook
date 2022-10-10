@@ -4,9 +4,13 @@ import models.Contact;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
+import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 
 
 public class HelperContact extends HelperBase {
@@ -67,29 +71,6 @@ public class HelperContact extends HelperBase {
         return wd.findElements(By.cssSelector("a[href='/add'].active")).size() > 0;
     }
 
-    public void findContact() {
-        click(By.cssSelector(".contact-item_card__2SOIM"));
-    }
-
-    public void clickRemoveButton() {
-        click(By.xpath("//button[text()='Remove']"));
-        pause(200);
-    }
-
-    public void removeAllContacts() {
-        List<WebElement> list = wd.findElements(By.cssSelector(".contact-item_card__2SOIM"));
-        for (WebElement el : list) {
-            click(By.cssSelector(".contact-item_card__2SOIM"));
-            click(By.xpath("//button[text()='Remove']"));
-            pause(2000);
-        }
-
-    }
-
-    public boolean isContactBookEmpty() {
-      List<WebElement> list = wd.findElements(By.cssSelector(".contact-item_card__2SOIM"));
-      return list.size() == 0;
-    }
 
 
     public void addNewContacts(Contact contact) {
@@ -97,6 +78,61 @@ public class HelperContact extends HelperBase {
         fillAllFields(contact);
         saveNewContact();
 
+
+    }
+    public int removeOneContact() {
+        int before =countOfContact();
+
+        if(!isCountListEmpty()) {
+            removeContact();
+        }
+
+        int after = countOfContact();
+        return before-after;
+    }
+
+    private boolean isCountListEmpty() {
+        return wd.findElements(By.cssSelector(".contact-item_card__2SOIM")).isEmpty();
+    }
+
+    private void removeContact() {
+        click(By.cssSelector(".contact-item_card__2SOIM"));
+        click(By.xpath("//button[text()='Remove']"));
+        pause(500);
+    }
+
+    private int countOfContact() {
+        return wd.findElements(By.cssSelector(".contact-item_card__2SOIM")).size();
+    }
+
+    public void removeAllContacts() {
+//        List <WebElement> list = wd.findElements(By.cssSelector(".contact-item_card__2SOIM"));
+//        for (int i = 0; i < list.size(); i++) {
+//            click(By.cssSelector(".contact-item_card__2SOIM"));
+//            click(By.xpath("//button[text()='Remove']"));
+//            pause(500);
+//        }
+
+        while (wd.findElements(By.cssSelector(".contact-item_card__2SOIM")).size() != 0) {
+            removeContact();
+        }
+    }
+    public boolean isNoContactsHere() {
+        return new WebDriverWait(wd, Duration.ofSeconds(5))
+                .until(ExpectedConditions
+                        .textToBePresentInElement(wd.findElement(By.cssSelector(".contact-page_message__2qafk h1")),"No Contacts here!" ));
+    }
+
+    public void providerOfContacts() {
+        //check count of contacts <3 --- > add 3 contacts
+        Random random = new Random();
+        int i = random.nextInt(1000)+1000;
+        if(wd.findElements(By.cssSelector(".contact-item_card__2SOIM")).size()<=3){
+            addNewContacts(Contact.builder().name("Alexandr").lastName("Markov").phone("74665"+i).email("alexandr"+i+"@mail.com").address("Haifa").build());
+            addNewContacts(Contact.builder().name("Evgenii").lastName("Huston").phone("5682"+i).email("evgenii"+i+"@mail.com").address("New York").build());
+            addNewContacts(Contact.builder().name("Matilda").lastName("Kohen").phone("2543"+i).email("matilda"+i+"@mail.com").address("Jerusalem").build());
+
+        }
 
     }
 }

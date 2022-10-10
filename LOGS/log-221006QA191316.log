@@ -1,0 +1,6 @@
+19:13:20.663 [Test worker] INFO  manager.ApplicationManager - Current URL -->https://contacts-app.tobbymarshall815.vercel.app/home
+19:13:20.685 [Test worker] INFO  TestBase - START TEST WITH NAME: loginSuccess
+19:13:20.686 [Test worker] INFO  TestBase - Start authorization check
+19:13:25.724 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.xpath: //a[@href='/l']
+19:13:30.763 [Test worker] INFO  manager.ListenerWD - The name of the error methodfindElement
+19:13:30.764 [Test worker] INFO  manager.ListenerWD - Error description: null

@@ -27,8 +27,6 @@ public class HelperUser extends HelperBase{
     }
 
     public void openLoginRegistrationForm(){
-
-        //WebElement loginTab = wd.findElement(By.cssSelector("[aria-current='page']"));
         WebElement loginTab = wd.findElement(By.xpath("//a[@href='/login']"));
         loginTab.click();
     }
@@ -38,16 +36,6 @@ public class HelperUser extends HelperBase{
         type(By.xpath("//input[@placeholder='Email']"), email);
         type(By.xpath("//input[@placeholder='Password']"), password);
 
-        //Old version
-//        WebElement inputEmail = wd.findElement(By.xpath("//input[@placeholder='Email']"));
-//        inputEmail.click();
-//        inputEmail.clear();
-//        inputEmail.sendKeys(email);
-//
-//        WebElement inputPassword = wd.findElement(By.xpath("//input[@placeholder='Password']"));
-//        inputPassword.click();
-//        inputPassword.clear();
-//        inputPassword.sendKeys(password);
     }
 
     public void fillLoginRegistrationForm(User user) {
