@@ -11,7 +11,7 @@ public class RegistrationTest extends TestBase{
         app.getHelperUser().logOut();
     }
 
-    @Test
+    @Test(invocationCount = 5)
     public void registrationSuccess(){
         System.currentTimeMillis();
         int i = (int)((System.currentTimeMillis()/1000)%3600);
@@ -20,6 +20,7 @@ public class RegistrationTest extends TestBase{
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistration();
 
+        logger.info("Data "+ user.toString());
         Assert.assertTrue(app.getHelperUser().isLogged());
     }
 

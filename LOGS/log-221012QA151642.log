@@ -1,0 +1,2 @@
+15:16:45.598 [Test worker] INFO  manager.ApplicationManager - Chrome driver was opened
+15:16:47.570 [Test worker] INFO  manager.ApplicationManager - Current URL --> https://contacts-app.tobbymarshall815.vercel.app/home

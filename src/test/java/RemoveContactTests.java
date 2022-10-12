@@ -15,13 +15,13 @@ public class RemoveContactTests extends TestBase{
         app.helperContact().providerOfContacts();
     }
 
-    @Test
+    @Test (priority = 1)
     public void removeOneContact(){
 
         Assert.assertEquals(app.helperContact().removeOneContact(), 1);
     }
 
-    @Test
+    @Test (priority = 2)
     public void removeAllContacts(){
 
         app.helperContact().removeAllContacts();

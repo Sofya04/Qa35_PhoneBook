@@ -1,0 +1,17 @@
+15:14:26.409 [Test worker] INFO  manager.ApplicationManager - Chrome driver was opened
+15:14:27.931 [Test worker] INFO  manager.ApplicationManager - Current URL --> https://contacts-app.tobbymarshall815.vercel.app/home
+15:14:27.954 [Test worker] INFO  TestBase - START TEST WITH NAME: loginNegativeWrongEmailFormat
+15:14:27.955 [Test worker] INFO  TestBase - Start authorization check
+15:14:32.987 [Test worker] INFO  manager.ListenerWD - After FInd Elements By -->By.xpath: //button[text()='Sign Out']
+15:14:32.988 [Test worker] INFO  manager.ListenerWD - List size is-->0
+15:14:32.992 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.xpath: //a[@href='/login']
+15:14:33.032 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.xpath: //a[@href='/login']
+15:14:33.357 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.xpath: //input[@placeholder='Email']
+15:14:33.374 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.xpath: //input[@placeholder='Email']
+15:14:33.663 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.xpath: //input[@placeholder='Password']
+15:14:33.688 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.xpath: //input[@placeholder='Password']
+15:14:33.768 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.xpath: //*[text()=' Login']
+15:14:33.780 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.xpath: //*[text()=' Login']
+15:14:34.784 [Test worker] INFO  manager.ListenerWD - After FInd Elements By -->By.xpath: //button[text()='Sign Out']
+15:14:34.785 [Test worker] INFO  manager.ListenerWD - List size is-->0
+15:14:34.808 [Test worker] INFO  TestBase - User with wrong email: sonka04gmail.comcannot login
