@@ -11,7 +11,7 @@ public class RegistrationTest extends TestBase{
         app.getHelperUser().logOut();
     }
 
-    @Test(invocationCount = 5)
+    @Test(invocationCount = 3, groups = {"smoke", "sanity"})
     public void registrationSuccess(){
         System.currentTimeMillis();
         int i = (int)((System.currentTimeMillis()/1000)%3600);

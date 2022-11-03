@@ -25,3 +25,37 @@ dependencies {
 test {
     useTestNG()
 }
+task phone(type: Test) {
+    useTestNG() {
+
+        def groups = System.getProperty('groups')
+        if (groups != null) {
+            includeGroups groups
+        }
+
+
+        def suite = System.getProperty('suite', '')
+
+        if (suite.equals("testng")) {
+            suites 'src/test/resources/testng.xml'
+        } else if (suite.equals("removingtests")) {
+            suites 'src/test/resources/removingtests.xml'
+        } else {
+            suites 'src/test/resources/alltests.xml'
+        }
+
+
+    }
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+
+    task groups(type: Test) {
+        useTestNG() {
+            suites 'src/test/resources/groups.xml'
+        }
+        if (project.hasProperty('browser')) {
+            systemProperty 'browser', "${browser}"
+        }
+    }
+}

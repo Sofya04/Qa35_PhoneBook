@@ -17,7 +17,7 @@ public class LoginTests extends TestBase{
         }
     }
 
-    @Test (dataProvider = "loginSuccess", dataProviderClass = DataProviderUser.class)
+    @Test (dataProvider = "loginSuccess", dataProviderClass = DataProviderUser.class, groups = {"smoke", "sanity"})
     public void loginSuccess(String email, String password) {
 
         logger.info("email "+email+" && password "+password);

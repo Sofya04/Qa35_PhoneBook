@@ -15,7 +15,7 @@ public class RemoveContactTests extends TestBase{
         app.helperContact().providerOfContacts();
     }
 
-    @Test (priority = 1)
+    @Test (priority = 1, groups = {"smoke", "sanity"})
     public void removeOneContact(){
 
         Assert.assertEquals(app.helperContact().removeOneContact(), 1);

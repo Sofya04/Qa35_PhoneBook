@@ -17,7 +17,7 @@ public class AddNewContactTests extends TestBase {
         }
     }
 
-    @Test
+    @Test (groups = {"smoke", "sanity"})
     public void addNewContactSuccessWithAllFields(){
 
         Random random = new Random();

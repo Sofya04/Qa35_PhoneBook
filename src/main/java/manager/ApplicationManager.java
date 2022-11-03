@@ -2,6 +2,8 @@ package manager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverListener;
@@ -16,11 +18,24 @@ public class ApplicationManager {
     HelperUser helperUser;
     HelperContact helperContact;
 
+    String browser;
+
+    public ApplicationManager(String browser) {
+        this.browser = browser;
+    }
 
     public void init(){
+        if(browser.equals(Browser.CHROME.browserName())){
+            wd = new ChromeDriver();
+            logger.info("Chrome Driver was opened");
+
+        }
+        else if(browser.equals(Browser.FIREFOX.browserName())){
+            wd = new FirefoxDriver();
+            logger.info("FireFox was opened");
+
+        }
         WebDriverListener listener = new ListenerWD();
-        wd = new ChromeDriver();
-        logger.info("Chrome driver was opened");
         wd = new EventFiringDecorator<>(listener).decorate(wd);
         wd.manage().window().maximize();
         wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
