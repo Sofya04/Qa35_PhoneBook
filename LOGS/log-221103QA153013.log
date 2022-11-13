@@ -1,0 +1,33 @@
+15:30:20.928 [Test worker] INFO  manager.ApplicationManager - Chrome Driver was opened
+15:30:22.306 [Test worker] INFO  manager.ApplicationManager - Current URL --> https://contacts-app.tobbymarshall815.vercel.app/home
+15:30:22.327 [Test worker] INFO  TestBase - START TEST WITH NAME: addNewContactSuccessWithAllFields
+15:30:27.388 [Test worker] INFO  manager.ListenerWD - After FInd Elements By -->By.xpath: //button[text()='Sign Out']
+15:30:27.388 [Test worker] INFO  manager.ListenerWD - List size is-->0
+15:30:27.389 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.xpath: //a[@href='/login']
+15:30:27.412 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.xpath: //a[@href='/login']
+15:30:27.805 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.xpath: //input[@placeholder='Email']
+15:30:27.821 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.xpath: //input[@placeholder='Email']
+15:30:28.538 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.xpath: //input[@placeholder='Password']
+15:30:28.553 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.xpath: //input[@placeholder='Password']
+15:30:28.629 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.xpath: //*[text()=' Login']
+15:30:28.640 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.xpath: //*[text()=' Login']
+15:30:33.703 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.cssSelector: a[href='/add']
+15:30:33.721 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.cssSelector: a[href='/add']
+15:30:33.782 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.cssSelector: [placeholder='Name']
+15:30:33.797 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.cssSelector: [placeholder='Name']
+15:30:33.918 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.cssSelector: [placeholder='Last Name']
+15:30:33.934 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.cssSelector: [placeholder='Last Name']
+15:30:34.126 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.cssSelector: [placeholder='Phone']
+15:30:34.145 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.cssSelector: [placeholder='Phone']
+15:30:34.401 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.cssSelector: [placeholder='email']
+15:30:34.416 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.cssSelector: [placeholder='email']
+15:30:35.220 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.cssSelector: [placeholder='Address']
+15:30:35.250 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.cssSelector: [placeholder='Address']
+15:30:36.658 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.cssSelector: [placeholder='description']
+15:30:36.709 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.cssSelector: [placeholder='description']
+15:30:36.836 [Test worker] INFO  manager.ListenerWD - Before Find Elements By -->By.cssSelector: button b
+15:30:36.847 [Test worker] INFO  manager.ListenerWD - After Find Element by --> By.cssSelector: button b
+15:30:37.560 [Test worker] INFO  manager.ListenerWD - After FInd Elements By -->By.cssSelector: h2
+15:30:37.560 [Test worker] INFO  manager.ListenerWD - List size is-->1
+15:30:37.599 [Test worker] INFO  manager.ListenerWD - After FInd Elements By -->By.cssSelector: h3
+15:30:37.600 [Test worker] INFO  manager.ListenerWD - List size is-->1
